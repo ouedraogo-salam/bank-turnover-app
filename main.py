@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 app = Dash(__name__)
 
 churn_df = pd.read_csv(
-    "C:\\Users\\user\\Data_Science\\Bank_Turnover\\dash_app\\Churn_Modelling_clean.csv")
+    "C:\\Users\\user\\Data_Science\\bank-turnover-app\\Churn_Modelling_clean.csv")
 
 geography_graph = go.Figure(
     px.histogram(data_frame=churn_df, x="geography",
