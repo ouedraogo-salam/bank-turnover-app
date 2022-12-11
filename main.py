@@ -3,11 +3,13 @@ import numpy as np
 from dash import Dash, dcc, html, callback, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
+from os import path
 
 app = Dash(__name__)
 
-churn_df = pd.read_csv(
-    "C:\\Users\\user\\Data_Science\\bank-turnover-app\\Churn_Modelling_clean.csv")
+
+data_set_file = path.join(path.curdir, 'Churn_Modelling_clean.csv')
+churn_df = pd.read_csv(data_set_file)
 
 geography_graph = go.Figure(
     px.histogram(data_frame=churn_df, x="geography",
@@ -147,4 +149,4 @@ def update_callback(geography_value):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
